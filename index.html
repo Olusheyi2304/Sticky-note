@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+ <meta charset="UTF-8">
+ <meta http-equiv="X-UA-Compatible" content="IE=edge">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>Sticky Note</title>
+ <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+ <nav class="nav-bar">
+  <header>My Notes</header>
+  <button type="button" class="main-btn">Add note</button>
+ </nav>
+ <!-- Notes goes here -->
+ <main class="main-notes-section">
+  <div class="notes">
+
+  </div>
+ </main>
+ <!-- End of Notes goes here -->
+
+ <!-- Modal elements -->
+
+ <!-- Note Box -->
+ <div class="add-note-box hidden">
+  <div class="header-close">
+   <span class="add-new-notes">Add new notes</span>
+   <div class="close"><img src="images/x.svg" alt="" class="close-svg"></div>
+  </div>
+  <textarea class="note-box" placeholder="Type a new note..."></textarea>
+  <button type="button" class="add-note-btn">Add note</button>
+ </div>
+ <!-- End of Note Box -->
+
+ <!-- overlay backdrop filter element -->
+ <div class="overlay hidden"></div>
+<!-- End of modal elements -->
+
+ <script src="main.js"></script>
+</body>
+
+</html>
