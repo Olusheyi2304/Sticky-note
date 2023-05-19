@@ -3,18 +3,32 @@ const headerBtn = document.querySelector(".main-btn");
 const noteBoxBtn = document.querySelector(".add-note-btn");
 const noteBox = document.querySelector(".add-note-box");
 const closeBtn = document.querySelector(".close-svg");
-
-headerBtn.addEventListener("click", () => {
+const overlay_element = document.querySelector(".overlay");
+//showBox function
+const showNoteBox = () => {
   noteBox.classList.remove("hidden");
-});
-
-closeBtn.addEventListener("click", () => {
+  overlay_element.classList.remove("hidden");
+};
+// Exit Box function
+const closeNoteBox = () => {
   noteBox.classList.add("hidden");
-});
-
-const keyFunc = (e) => {
-  if (e.key === "Escape" && !noteBox.classList.contains("hidden"))
-    noteBox.classList.add("hidden");
+  overlay_element.classList.add("hidden");
 };
 
+//Keydown function
+
+const keyFunc = (e) => {
+  if (e.key === "Escape" && !noteBox.classList.contains("hidden"));
+  noteBox.classList.add("hidden");
+  overlay_element.classList.add("hidden");
+};
+
+overlay_element.addEventListener("click", closeNoteBox);
+
+headerBtn.addEventListener("click", showNoteBox);
+
+closeBtn.addEventListener("click", closeNoteBox);
+
 document.querySelector("body").addEventListener("keydown", keyFunc);
+
+// function to create the note box into the main-note-section class using note class
